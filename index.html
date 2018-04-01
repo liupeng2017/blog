@@ -1,1 +1,859 @@
-my page
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>我的 Github 个人博客是怎样炼成的 - CocoaChina_让移动开发更简单</title>
+    <meta name="keywords" content=" Github,博客" />
+    <meta name="description" content="长大后才发现政府建造 GFW 真是太 TM 机智了，由于本人自制力较差，且不说 91porn, youporn 等两性知识网站的超强战斗力，单单一个Youtube就可以让我瞬间强撸灰飞烟灭。即使本人意志力足够强，万一不小心点击进了大纪元，遭受到了轮子思想的侵袭，动摇了我无条件支持 CCP 的 自干五 情怀那也是极其不好的。" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta http-equiv=”X-UA-Compatible” content=”IE=edge,chrome=1″ />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="baidu-tc-cerfication" content="3300a939a1098c27e94457b75a0bb8c1" />
+    
+
+<!-- Ad Muncher content start --><script type="text/javascript" src="http://interceptedby.admuncher.com/8DCD9F2511E19A9C/helper.js#0.10790.0" id="wZxy_MainScript"></script><link rel="stylesheet" href="http://interceptedby.admuncher.com/8DCD9F2511E19A9C/helper.css" type="text/css" media="all" /><!-- Ad Muncher content end -->
+
+<script type='text/javascript'>
+        function gotoMobilePage() {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var agent_iphone = /iphone/i;
+            var agent_android = /android/i;
+            //var agent_ipad = /ipad/i;
+            var agent_ipod = /ipod/i;
+            var agent_wphone = /windows phone/i;
+            if(agent_iphone.test(sUserAgent) || agent_android.test(sUserAgent) || agent_ipod.test(sUserAgent) || agent_wphone.test(sUserAgent)){
+                var re = /\/\w+\/\d+\/(\d+)\.html/, 
+                    result = re.exec(window.location.pathname);
+                if ( result )
+                {
+                    window.location.href = "http://www.cocoachina.com/cms/wap.php?action=article&id=" + result[1];
+                } else {
+                    window.location.href = "http://m.cocoachina.com/";
+                }
+            }
+        }
+        gotoMobilePage(); 
+    </script>
+    <link rel="stylesheet" href="http://cdn.cocimg.com/assets/css/global.css?v=20150818" media="all">
+    <link rel="stylesheet" href="http://cdn.cocimg.com/assets/css/index.css?v=20151015" media="all">
+    <link href="http://cdn.cocimg.com/assets/css/module.css?v=20150906" rel="stylesheet">
+    <link href="http://cdn.cocimg.com/assets/css/style1.css?v=62015081888" rel="stylesheet">
+    <link href="http://cdn.cocimg.com/assets/css/navheader.css?v=20160301" rel="stylesheet" />
+    <script src="http://cdn.cocimg.com/assets/js/jquery.min.js?v=20150818" type="text/javascript"></script>
+    <script type="text/javascript" src="http://cdn.cocimg.com/assets/js/navbar.js?v=20151013"></script>
+    <script type="text/javascript" src="http://s.csbew.com/k.js"></script>
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?88399e4c4cf744609c4fc8c3a8935691";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+
+    <div class="nav-header">
+            <div class="nav-header-top">
+                <div class="nav-logo nav-fl"><a href="/"><img src="http://cdn.cocimg.com/assets/images/logo.png?v=201510272" /></a></div>
+                <div class="nav-list nav-fl">
+                    <ul>
+                        <li style='width:12%'><a href="/news/">资讯</a></li>
+                        <li style='width:12%'><a href="/bbs/">论坛</a></li>
+                        <li style='width:12%'><a target="_blank" href="http://code.cocoachina.com/" title="CODE">代码</a></li>
+                        <li style='width:12%'><a href="http://tools.cocoachina.com" title="工具" target='_blank'>工具</a></li>
+                        <li style='width:12%'><a target="_blank" href="http://www.cvp-platform.com/" title="CVP">CVP</a></li>
+
+                        <li style='width:12%'><a target="_blank" href="http://blog.cocoachina.com/" title="blog">博客</a></li>
+                        <li style='width:12%'><a target="_blank" href="http://top.cocoachina.com" title="榜单"></a></li>
+                        <li style='width:12%'><a target="_blank" href="http://shop.cocoachina.com/" title="商城">商城</a></li>
+                    </ul>
+                </div>
+                <div class="nav-search nav-fl">
+                    <div class="nav-search-flag" style="display:block"><img src="http://cdn.cocimg.com/assets/img/search-icon.png?v=20150825" /></div>
+                    <div class="nav-search-form" style="display:none">
+                        <form action="/cms/plus/search.php" name="formsearch" method="post" target="_blank">
+                            <input type="hidden" name="kwtype" value="0" />
+                            <input type="hidden" name="searchtype" value="titlekeyword" />
+                            <input name="keyword" type="text" placeholder="站内搜索" />
+                            <input type="button" />
+                        </form>
+                    </div>
+                </div>
+                <div class="nav-user nav-fr">
+                    <!-- #region 未登录时显示此区域 -->
+                    <div class="nav-user-login" style="display:block">
+                        <a href="/bbs/login.php">登录</a>|
+                        <a href="/bbs/register.php">注册</a>
+                    </div>
+                    <!-- #endregion -->
+                    <!-- #region 已登录时显示此区域 -->
+                    <div class="nav-user-name" style="display:none">
+                        <div><alert></alert><img src="/assets/img/user.png" />Guest</div>
+                        <ul>
+                            <li><a href="#"><img src="/assets/img/i-man.png" />我的主页</a></li>
+                            <li><alert></alert><a href="#"><img src="/assets/img/i-mail.png" />我的消息</a></li>
+                            <li><a href="#"><img src="/assets/img/i-setting.png" />账户设置</a></li>
+                            <li><a href="index-offline.html"><img src="/assets/img/i-logout.png" />退出</a></li>
+                        </ul>
+                    </div>
+                    <!-- #endregion -->
+                </div>
+                <div class="nav-clear"></div>
+            </div>
+        <div class="nav-header-bottom">
+            <ul>
+                <li><a id="ios" href="/ios/" title="ios">iOS开发</a></li>
+                <li><a id="app_store" href="/appstore/" title="appstore">App Store研究</a></li>
+                <li><a id="apple" href="/apple/" title="apple">苹果相关</a></li>
+                <li><a id="android" href="/android/" title="android">安卓相关</a></li>
+                <li><a id="blockchain" href="/blockchain/" title="blockchain">区块链</a></li>
+                <li><a id="ai" href="/ai/" title="ai">AI</a></li>
+                <li><a id="industry" href="/industry/" title="industry">业界动态</a></li>
+                <li><a id="programmer" href="/programmer/" title="programmer">程序人生</a></li>
+                <li><a id="renwu" href="/renwu/" title="renwu">平台任务</a></li>
+
+
+            </ul>
+        </div>
+    </div>
+
+<script language="javascript">
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+        }
+        return flag;
+    }
+    if (!IsPC()){
+           window.location.href = "http://www.cocoachina.com/cms/wap.php?action=article&id=19219";
+    }
+
+</script>
+<style>
+blockquote{
+
+padding: 15px 0 1px 15px;
+    margin-bottom: 10px;
+    background-color: #f7f7f7;
+    border-left: 6px solid #b4b4b4;
+    word-break: break-word!important;
+    word-break: break-all;
+    font-size: 14px;
+    line-height: 20px;
+
+	}
+blockquote p{
+	margin-bottom:15px!important;
+}
+.field_body pre, .field_body code, .field_body tt {
+	font: 1em/1.5em 'Andale Mono', 'Lucida Console', monospace;
+}
+.field_body h1,.field_body  h2, .field_body h3, .field_body h4, .field_body h5, .field_body h6,.field_body b,.field_body strong {
+	font-weight: bold;
+}
+.field_body em, .field_body i, .field_body dfn {
+	font-style: italic;
+}
+.field_body dfn {
+	font-weight:bold;
+}
+.field_body p, .field_body code, .field_body pre, .field_body kbd {
+	margin:0 0 1.5em 0;
+}
+
+.field_body cite {
+	font-style: italic;
+}
+.field_body li ul, .field_body li ol {
+	margin:0 1.5em;
+}
+.field_body ul, .field_body ol {
+	margin:0 1.5em 1.5em 1.5em;
+}
+.field_body ul {
+	list-style-type:disc;
+}
+.field_body ol {
+	list-style-type:decimal;
+}
+.field_body ol ol {
+	list-style: upper-alpha;
+}
+.field_body ol ol ol {
+	list-style: lower-roman;
+}
+.field_body ol ol ol ol {
+	list-style: lower-alpha;
+}
+.field_body dl {
+	margin:0 0 1.5em 0;
+}
+.field_body dl dt {
+	font-weight:bold;
+}
+.field_body dd {
+	margin-left:1.5em;
+}
+.field_body table {
+	margin-bottom:1.4em;
+	width:100%;
+}
+.field_body th {
+	font-weight:bold;
+}
+.field_body th, .field_body td, .field_body caption {
+	padding:4px 10px 4px 5px;
+}
+.field_body tfoot {
+	font-style:italic;
+}
+.field_body sup, .field_body sub {
+	line-height:0;
+}
+.field_body abbr, .field_body acronym {
+	border-bottom: 1px dotted;
+}
+.field_body address {
+	margin:0 0 1.5em;
+	font-style:italic;
+}
+.field_body del {
+	text-decoration: line-through;
+}
+.field_body pre {
+	margin:1.5em 0;
+	white-space:pre;
+}
+.field_body img.centered, .field_body .aligncenter, .field_body div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.field_body img.alignright {
+	display: inline;
+}
+.field_body img.alignleft {
+	display: inline;
+}
+.field_body .alignright {
+	float: right;
+	margin-left: 10px;
+}
+.field_body .alignleft {
+	float: left;
+	margin-right: 10px;
+}
+.field_body img {
+	max-width: 100%;
+}
+
+</style>
+<!--middle-->
+<div class="middle clearfix">
+    <div class="m-wrap">
+        <div class="m-ad2" style="margin-top:12px;">
+            <div class="ad2-l">
+                <script>                                                                     </script>
+                <!-- CC首页底部左侧72890 -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-1180518835303646"
+                     data-ad-slot="8012423965"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            <!-- <div class="ad2-l">
+                <a href="https://juejin.im/welcome/ios?utm_source=cocoachina&utm_medium=banner&utm_content=huoyue&utm_campaign=q4_website"><img src="http://cdn.cocimg.com/assets/img/juejin1.png" alt=""></a>
+            </div> -->
+            <div class="ad2-r">
+                <script>                                                                     </script>
+                <!-- CC资讯页25090 -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:250px;height:90px"
+                     data-ad-client="ca-pub-1180518835303646"
+                     data-ad-slot="9489157162"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+        <!--left-->
+        <div class="detail-left float-l">
+            <p class="crumbs"><a href="/" title="首页">首页</a> &gt;</span><a href="/programmer" title="程序人生"><span id="type_name">程序人生</span></a></p>
+            <div class="detail-main">
+                <h2>我的 Github 个人博客是怎样炼成的</h2>
+                <div class="p-ico clearfix">
+                    <div>
+                        <span class="ml0">2017-05-09 11:00</span>
+                        <span>编辑：
+                        <a href="" id="field_author" target="_blank">AllanHou</a></span>
+                        <span>分类：<a href="/programmer/" target="_blank">程序人生</a></span>
+                        <span id="source">来源：<a href="http://www.jianshu.com/p/4fd3cb0a11da#" target="_blank">小强Joey的简书</a></span>
+
+                        <div class="float-r">
+                            <span id="artical_comment_cnt"><i></i></span>
+                            <span><i class="view"></i><script src="/cms/plus/count.php?view=yes&aid=19219&mid=68" language="javascript"></script></span>
+                    </div>
+                    </div>
+                </div>
+                <div class="p-ico clearfix">
+                    <p class="related float-l"><a href="/cms/tags.php?/Github/" target="_blank">Github</a><a href="/cms/tags.php?/%E5%8D%9A%E5%AE%A2/" target="_blank">博客</a></p>
+                    <input type="hidden" id="article_id"  value="19219"/>
+                </div>
+                <div class="adsbox clearfix">
+                    <div class="float-l">
+                        <div class="float-l"><b>招聘信息：</b></div>
+                        <ul class="float-l" id="invitelist" style="margin-top: 0px;">
+                            <li><a href='http://job.cocoachina.com/job/show?id=68612' target='_blank'>iOS开发工程师</a></li><li><a href='http://job.cocoachina.com/job/show?id=68573' target='_blank'>京东招聘iOS开发工程师</a></li><li><a href='http://job.cocoachina.com/job/show?id=68695' target='_blank'>cocos2d-x主程</a></li><li><a href='http://job.cocoachina.com/job/show?id=68698' target='_blank'>iOS架构师</a></li><li><a href='http://job.cocoachina.com/job/show?id=68606' target='_blank'>iOS高级开发工程师</a></li><li><a href='http://job.cocoachina.com/job/show?id=68431' target='_blank'>Cocos2d-x开发工程师</a></li><li><a href='http://job.cocoachina.com/job/show?id=68433' target='_blank'>手游服务器开发工程师（C++）</a></li><li><a href='http://job.cocoachina.com/job/show?id=68605' target='_blank'>Android / iOS / Web / Backend 资深开发工程师</a></li><li><a href='http://job.cocoachina.com/job/show?id=68492' target='_blank'>iOS 开发工程师（实习）</a></li><li><a href='http://job.cocoachina.com/job/show?id=68493' target='_blank'>iOS开发工程师</a></li><li><a href='http://job.cocoachina.com/job/show?id=68369' target='_blank'>产品经理</a></li>
+                            <!--<script src="http://www.cocoachina.com/bbs/new.php?action=article&fidin=26&digest=0&postdate=0&author=0&fname=0&hits=0&replies=0&pre=1&num=3&length=120&order=2" charset="gbk"></script>-->
+                        </ul>
+                    </div>
+                    <div class="float-r">
+                        <a href="javascript:void(0)" class="prev"></a>
+                        <a href="javascript:void(0)" class="next"></a>
+                    </div>
+                </div>
+                <div id="detailbody" class="field_body">
+                    <p><a href="http://www.jianshu.com/p/4fd3cb0a11da" target="_self">原文</a></p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299274269105.png" title="1494299274269105.png" alt="119048-12115e2953edd3be.png" width="799" height="558" style="width: 799px; height: 558px;"/></p><p style="text-align: center;">Joey&#39;s Blog<br/></p><p>长大后才发现政府建造 GFW 真是太 TM 机智了，由于本人自制力较差，且不说 91porn, youporn 等两性知识网站的超强战斗力，单单一个Youtube就可以让我瞬间强撸灰飞烟灭。即使本人意志力足够强，万一不小心点击进了大纪元，遭受到了轮子思想的侵袭，动摇了我无条件支持 CCP 的 自干五 情怀那也是极其不好的。</p><p>下面问题来了，翻越 GFW 难道一无是处吗？</p><p>当然不是，可以努力的薅万恶的资本主义国家羊毛嘛。</p><p>下面是作者自建 Github 主页的详细过程，教程中部分网站需要 VPN 服务才能登陆，若无法登陆，你懂的。其次，作者使用的设备为 Mac，Windows 用户在部分内容上会有所出入。</p><p><span style="font-size: 20px;"><strong>一、使用 GitHub Education 福利</strong></span></p><p>Google 输入 <a href="https://education.github.com/" target="_self">github education</a>, 点击进入，如下图所示。</p><p style="text-align:center"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299322734448.png" title="1494299322734448.png" alt="119048-f0b024f2c447c0f5.png" width="816" height="525" style="width: 816px; height: 525px;"/></p><p style="text-align: center;">Search GitHub education</p><p>点击 Get the pack，如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299376447990.png" title="1494299376447990.png" alt="119048-3a538c2ec397e4f1.png" width="795" height="547" style="width: 795px; height: 547px;"/></p><p style="text-align: center;">Get the pack</p><p>点击 Get your pack，如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299396797469.png" title="1494299396797469.png" alt="119048-e9133f583aa1f5cf.png" width="816" height="471" style="width: 816px; height: 471px;"/></p><p style="text-align: center;">Get your pack</p><p>接下来，按照网站的要求填写个人信息[你需要拥有校园网邮箱证明你的学生身份，才可以享受福利]。提交表单后，GitHub 需要1-2周的时间审核你的个人身份，然后你会收到这样一封邮件，受宠若惊有木有，反正当时我的内心是，还有服务这么好的公司。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299423782891.jpeg" title="1494299423782891.jpeg" alt="119048-9e7f19f52bd5dd7f.jpeg"/></p><p style="text-align: center;">Email Screenshot</p><p>点开邮件中的链接，你会来到 My pack 的界面，大礼包都在下面啦，可自行浏览。对 Github 个人主页最重要的礼包是 namecheap一年免费域名。当然 Digital ocean 100刀的福利也是棒棒的，ATOM编辑器也是写网站的不二选择。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299445239986.png" title="1494299445239986.png" alt="119048-9e2f7a35d804c328.png" width="821" height="491" style="width: 821px; height: 491px;"/></p><p style="text-align: center;">My pack</p><p>有了域名礼包后，不急，过会我们才会用到它。</p><p><span style="font-size: 20px;"><strong>二、使用 GitHub Pages 建站</strong></span></p><p>Google 输入 github pages，点击进入，如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299490612161.png" title="1494299490612161.png" alt="119048-1d2cd04a916d3dde.png" width="819" height="452" style="width: 819px; height: 452px;"/></p><p style="text-align: center;">Github pages</p><p>按照官网教程，不急，我们一步一步来。</p><p><strong>官网第一步</strong>：</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299521592320.png" title="1494299521592320.png" alt="119048-ba3bcf09237037bd.png" width="827" height="283" style="width: 827px; height: 283px;"/></p><p style="text-align: center;">Create a repository</p><p>第一步，登陆 GitHub，新建一个 repository, 命名为 你的用户名 + github.io。如我的用户名为 joeyqiang，所以 repository 命名为 joeyqiang.github.io，如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299541223294.png" title="1494299541223294.png" alt="119048-96e2f511eed2445a.png" width="826" height="397" style="width: 826px; height: 397px;"/></p><p style="text-align: center;">New a respository</p><p>官网第二步：</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299589893016.png" title="1494299589893016.png" alt="119048-f0b024f2c447c0f5 (1).png"/></p><p>我的电脑是 Mac, 选择 GitHub for Mac，然后将线上的 repository 克隆到本地 (我下载了 Github Desktop 用于同步，你也可以使用 Git 同步，看个人喜好)。</p><p>Clone 后，你会看到如下界面。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299640109580.png" title="1494299640109580.png" alt="119048-044ea6789f1aebbc.png" width="816" height="558" style="width: 816px; height: 558px;"/></p><p>官网第三步：<br/></p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299690334430.png" title="1494299690334430.png" alt="119048-665030e9ea875ffc.png" width="811" height="425" style="width: 811px; height: 425px;"/></p><p style="text-align: center;">Create an index file</p><p>好吧，打开 ATOM 编辑器，新建 index.html，输入你心中此时此刻所想，保存，如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299719929950.png" title="1494299719929950.png" alt="119048-fcebc29837935f11.png" width="811" height="614" style="width: 811px; height: 614px;"/></p><p style="text-align: center;">ATOM Screenshot</p><p>官网第四步：</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299754762867.png" title="1494299754762867.png" alt="119048-c5951ae139b6ebbb.png" width="811" height="504" style="width: 811px; height: 504px;"/></p><p style="text-align: center;">Commit & Sync</p><p>打开 GitHub Desktop, 提交更新。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299774182687.png" title="1494299774182687.png" alt="119048-0631e1c316602885.png" width="809" height="546" style="width: 809px; height: 546px;"/></p><p style="text-align: center;">Commit to master</p><p>官网第五步：</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299797594894.png" title="1494299797594894.png" alt="119048-803b34dc39fa5475.png"/></p><p style="text-align: center;">Go to the page</p><p>打开你的浏览器，输入你刚建的 repository 的文件名，比如我输入 joeyqiang.github.io。 Bang! You get it. 如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299824918968.png" title="1494299824918968.png" alt="119048-50719227ba2aed85.png" width="821" height="407" style="width: 821px; height: 407px;"/></p><p style="text-align: center;">Browse your blog</p><p>现在我们可以绑定私人域名到上面啦。该上文的 Namecheap 登场了。利用 GitHub 礼包中的 unique link 链接到 Namecheap Education。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299854520415.png" title="1494299854520415.png" alt="119048-679ef730c844d6ff.png" width="825" height="225" style="width: 825px; height: 225px;"/></p><p style="text-align: center;">Namecheap</p><p>输入你喜欢的域名，完成订单。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299882684216.png" title="1494299882684216.png" alt="119048-d2dbfa4f246b71a2.png" width="820" height="523" style="width: 820px; height: 523px;"/></p><p style="text-align: center;">Order custom domain</p><p>注册 Namecheap，登陆你的帐号，点击 Domain List, 然后点击 MANAGE，如下图。</p><ol class=" list-paddingleft-2" style="list-style-type: decimal;"><li><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299905247551.png" title="1494299905247551.png" alt="119048-9f0b1d1a54c86656.png" width="828" height="564" style="width: 828px; height: 564px;"/></p></li></ol><p style="text-align: center;">Manage domain</p><p>点击 Advanced DNS。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494299996666413.png" title="1494299996666413.png" alt="119048-757fd6bf08ed11fb.png" width="819" height="385" style="width: 819px; height: 385px;"/></p><p style="text-align: center;">Manage DNS</p><p>管理 DNS。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300026374452.png" title="1494300026374452.png" alt="119048-860b7f66483522e6.png" width="823" height="574" style="width: 823px; height: 574px;"/></p><p style="text-align: center;">Manage DNS</p><p>添加 A Record，最终结果如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300067201005.png" title="1494300067201005.png" alt="119048-4f7ebf64861cc419.png" width="833" height="186" style="width: 833px; height: 186px;"/></p><p style="text-align: center;">Add record</p><p>打开 GitHub，新建一个 file，如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300090785190.png" title="1494300090785190.png" alt="119048-2c9c151ca8477232.png" width="811" height="517" style="width: 811px; height: 517px;"/></p><p style="text-align: center;">Create a file</p><p>将 file 命名为 CNAME (全部为大写)，然后添加你的个人域名 (不要带 http 前缀)，保存，pull request 到 master, 如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300122189952.png" title="1494300122189952.png" alt="119048-6e8e44e3d5193f8f.png" width="820" height="534" style="width: 820px; height: 534px;"/></p><p style="text-align: center;">Edit the file</p><p>我们现在打开浏览器，输入你刚购买的域名，我的是joeyqiang.me，出现了，出现了，出现了，有木有！！！如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300165683204.png" title="1494300165683204.png" alt="119048-f61ba40aa1423d7d.png" width="818" height="465" style="width: 818px; height: 465px;"/></p><p style="text-align: center;">Browser screenshot</p><p><span style="font-size: 20px;"><strong>三、使用 Jekyll 搭建个人博客</strong></span></p><p>打开 terminal，安装 Ruby (Mac 已经预装了 Ruby)。可以输入</p><p>ruby --version 去验证是否安装，如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300203783299.png" title="1494300203783299.png" alt="119048-4e904713f23c2038.png"/></p><p style="text-align: center;">Confirm Ruby</p><p>接下来，输入sudo gem install github-pages，安装 Jekyll (gem update github-pages命令可以用来更新 Jekyll，以免 Github 服务器更新导致网站本地和线上表现不同)，如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300231728625.png" title="1494300231728625.png" alt="119048-5ba79c6b10943766.png"/></p><p style="text-align: center;">Install Jekyll</p><p>之后你需要在 master 下新建一个 file，命名为 Gemfile，输入</p><pre class="brush:js;toolbar:false">source&nbsp;&#39;https://rubygems.org&#39;
+gem&nbsp;&#39;github-pages&#39;</pre><p>如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300261873023.png" title="1494300261873023.png" alt="119048-5c61df6a7872ea28.png" width="945" height="538" style="width: 945px; height: 538px;"/></p><p style="text-align: center;">Create Gemfile</p><p>运行 terminal，使用命令行移至 repository 根目录下 (也可以直接在 GitHub Desktop 下右键 repository 打开)，如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300285774186.png" title="1494300285774186.png" alt="119048-623358b7518734ca.png"/></p><p style="text-align: center;">Command line to terminal</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300329345757.png" title="1494300329345757.png" alt="119048-321e5c94bf6cd3cb.png" width="820" height="570" style="width: 820px; height: 570px;"/></p><p style="text-align: center;">Right click to root directory</p><p>之后运行</p><pre class="brush:js;toolbar:false">bundle&nbsp;exec&nbsp;jekyll&nbsp;serve</pre><p>如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300361390978.png" title="1494300361390978.png" alt="119048-6482fa8db015f4ab.png"/></p><p style="text-align: center;">Running Jekyll</p><p>下面，就可以使用 Jekyll 啦，本地测试在浏览器输入 http://localhost:4000即可 (本地测试结束后 commit to master 提交线上即可)，如下图。</p><p style="text-align: center;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300384129436.png" title="1494300384129436.png" alt="119048-b717a48ade8c8347.png" width="820" height="532" style="width: 820px; height: 532px;"/></p><p style="text-align: center;">Local server</p><p><span style="font-size: 20px;"><strong>四、使用 Jekyll 模板个性化博客</strong></span></p><p>首先建议大家看下<a href="https://www.youtube.com/watch?v=IINPHVVrF5Q&list=PLWjCJDeWfDdfVEcLGAfdJn_HXyM4Y7_k-" target="_self"> Youtube Jekyll</a> 这个系列教程，比阅读<a href="https://jekyllrb.com" target="_self">官方文档</a>快捷容易多了，深入了解则需阅读文档了。我 Jekyll 也是才学，很多地方也在摸索中，欢迎多多交流。</p><p><span style="font-size: 16px;"><strong>以用户为中心的五维设计法则来指导设计思路。</strong></span></p><p><span style="background-color: rgb(242, 242, 242); font-size: 16px;">Strategy: 搭建博客的目的</span></p><ul class=" list-paddingleft-2" style="list-style-type: disc;"><li><p>表达自己的想法</p></li><li><p>锻炼自己的设计能力</p></li><li><p>作为日后找工作的作品</p></li></ul><p><span style="font-size: 16px; background-color: rgb(242, 242, 242);">Scope：有哪些功能和特性</span></p><ul class=" list-paddingleft-2" style="list-style-type: disc;"><li><p>Post: Easy to read, Easy to search, Tags, Recommended List, Comments</p></li><li><p>Design: Modern Style, Blank Space, CSS3, UX, English Version, SEO ,Responsive Design</p></li><li><p>About: Self-introduction, Resume, Portfolio, Feedback</p></li></ul><p><span style="background-color: rgb(242, 242, 242); font-size: 16px;">Structure：如何组合功能和特性</span></p><p style="text-align: center;"><span style="background-color: rgb(242, 242, 242); font-size: 16px;"><img src="http://cc.cocimg.com/api/uploads/20170509/1494300496904762.png" title="1494300496904762.png" alt="119048-27695195a73cd189.png"/></span></p><p style="text-align: center;"><span style="background-color: rgb(242, 242, 242);">Blog Structure</span></p><p><span style="background-color: rgb(242, 242, 242);">Skeleton：界面控件的位置</span></p><p><span style="background-color: rgb(242, 242, 242);">Surface：美化界面，视觉设计</span></p><p>本人视觉设计能力很一般，借鉴别人居多，加以自己的改动。博客界面设计采用 Jekyll 主题 Lanyon。当然如果你愿意用 Axure 设计原型图，再用 Photoshop 或 Sketch 完成设计稿，那也是极好的。</p><p><span style="font-size: 16px;"><strong>个人经验：</strong></span></p><ol class="custom_num list-paddingleft-1"><li class="list-num-1-1 list-num-paddingleft-1"><p>善用 Google，搭建的时候难免碰到棘手的问题。前辈们基本上已经帮我们踏出了一条康庄大道，特此感谢 <a href="http://cellier.me/2015/01/04/jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" target="_self">cellier</a> & <a href="http://zhangwenli.com/" target="_self">Ovilia</a>。Google 一下，你想要的基本都有。</p></li><li class="list-num-1-2 list-num-paddingleft-1"><p>评论插件我使用的是 <a href="https://disqus.com/" target="_self">Disqus</a>.</p></li><li class="list-num-1-3 list-num-paddingleft-1"><p>分析插件我使用的是 <a href="http://www.google.com/analytics/" target="_self">Google Analytics</a>.</p></li><li class="list-num-1-4 list-num-paddingleft-1"><p>脑图使用的是<a href="http://naotu.baidu.com/" target="_self">百度脑图</a>，比 Mindjet 好用多了。</p></li><li class="list-num-1-5 list-num-paddingleft-1"><p>博客文章使用的是 Markdown 语法，因为我简书就是用 Markdown 编辑的，所以直接下载保存到博客根目录下就好了。Markdown 请见<a href="http://www.jianshu.com/p/617516fba267" target="_self">簡書--有逼格的寫作</a>。</p></li></ol><p>好了，我的 GitHub 个人博客 —— <a href="http://joeyqiang.me/" target="_self">Joey · an uxer blog</a> 就是这样炼成的，欢迎大家访问，博客持续更新中。</p><p><span style="background-color: rgb(242, 242, 242);">愿政府相信人民的判断力，早日解开网的牢笼，释放精神的桎梏。</span></p><p><span style="background-color: rgb(242, 242, 242);">-- 野子Joey</span></p>
+                </div>
+                <div id="page" style="padding:0"></div>
+
+                <div class="wx_article">
+                    <div class="article_weixin">
+                        <img src="http://cdn.cocimg.com/cms/templets/images/article_weixin.jpg" width="131" height="131" alt="搜索CocoaChina微信公众号：CocoaChina"/>
+                        <div class="article_scan">微信扫一扫</div>
+                        <div class="article_txt" ><span style="color:#999999">订阅每日移动开发及APP推广热点资讯<br/>公众号：</span>CocoaChina</div>
+                    </div>
+                </div>
+
+               <div class="clearfix tgbox">
+                    <a href="http://www.cocoachina.com/deliver.php" class="tg float-l" target="_blank">我要投稿</a>&nbsp;&nbsp;
+                    <a style="margin-left:10px"  href="javascript:void(0)" onClick="add_favors(19219,'我的 Github 个人博客是怎样炼成的')" class="tg float-l" >收藏文章</a>
+                    <div class="share float-r">分享到：
+                        <div class="bdsharebuttonbox" id="sharediv"><a href="#" class="bds_more" data-cmd="more"></a> <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a> <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+                    </div>
+                </div>
+
+
+                <a class="zanbox" href="javascript:void(0)" id="zanbox" onClick="postDigg('good',19219)" title="哎呦，不错噢，赞一个" >
+                    <strong id="newdigg">
+                     <script src="/cms/plus/count.php?view=yes&digg_id=19219&mid=68" language="javascript"></script>
+                    </strong>
+                </a>
+            </div>
+
+            <div class="article-prev">上一篇：<a href='/programmer/20170509/19218.html'>技能终将过时，而能力与时俱进</a> </div>
+            <div class="article-next">下一篇：<a href='/programmer/20170509/19221.html'>程序员从娃娃抓起？英国将编程列为必修课</a> </div>
+
+            <!--相关资讯-->
+            <div class="part-wrap clearfix">
+                <h3>相关资讯</h3>
+                <ul class="info-list clearfix">
+                    <li>
+                        <a href="/programmer/20180306/22468.html" target="_blank" title="作为程序员，我们敲代码的时候很轻快，键盘上噼里啪啦，「弹指间，樯橹灰飞烟灭」。但是，不少程序员不喜欢写东西。
+当然，人都是有惰性的，要跨出这一步不容易。我开始得也有点晚，不过晚总">为什么程序员应该写博客？用什么博客系统？</a>
+                     </li>
+<li>
+                        <a href="/programmer/20180211/22254.html" target="_blank" title="上篇博客聊了《git分支管理之rebase 以及 cherry-pick相关操作》本篇博客我们就以Learning Git中的关卡进行展开。下方列举了LearningGit中的 merge、rebase、reset、revert、cherry-pick 以及交互式rebase相关关卡的操作">Git知识总览(五) Git中的merge、rebase、cherry-pick以及交互式rebase</a>
+                     </li>
+<li>
+                        <a href="/programmer/20180205/22152.html" target="_blank" title="上篇博客聊了《Git知识总览(三) 分支的创建、删除、切换、合并以及冲突解决》，本篇博客我们主要来看一下 rebase 变基相关的操作。rebase 操作和 merge 操作最终都可以达到合并代码的效果，不过其对分">Git知识总览(四) git分支管理之rebase 以及 cherry-pick相关操作</a>
+                     </li>
+<li>
+                        <a href="/programmer/20180123/21945.html" target="_blank" title="前两篇博客集中的聊了git的一些常用命令，具体请参见《Git知识总览(一) 从 git clone 和 git status 谈起》、《Git知识总览(二) git常用命令概览》。本篇博客主要涉及了在git版本管理中的分支的创建、切换">Git知识总览(三) 分支的创建、删除、切换、合并以及冲突解决</a>
+                     </li>
+<li>
+                        <a href="/programmer/20171208/21475.html" target="_blank" title="如何提升技术博客的影响力，如何去写技术博客，是否应该建立独立博客，如何去推广自己的文章，建立自己的品牌">技术博客那些事儿</a>
+                     </li>
+<li>
+                        <a href="/programmer/20171121/21252.html" target="_blank" title="简评：解放生产力的，GitHub 使用指南。">GitHub上的12个骚操作</a>
+                     </li>
+<li>
+                        <a href="/programmer/20171120/21228.html" target="_blank" title="现在的软件项目通常有大量的依赖库，而上游库的漏洞将会影响到下游软件。现在最大的开源软件开发平台 GitHub 宣布了安全警告服务，将搜索依赖寻找已知漏洞然后通过开发者，以便帮助开发者尽可">GitHub 将警告开发者流行软件库的漏洞</a>
+                     </li>
+<li>
+                        <a href="/programmer/20171013/20782.html" target="_blank" title="GitHub是全球最大的开源软件开发与管理社区，包括Google、Facebook等众多技术巨头在内都在这里安营扎寨，GitHub也成为了一探硅谷技术趋势最好的窗口，这个20亿美元的创业公司被开发者戏称为“全球最大">GitHub Octoverse报告：2017年编程趋势</a>
+                     </li>
+<li>
+                        <a href="/programmer/20170808/20164.html" target="_blank" title="统计出Github中所有项目的数量，几乎是不可能的，而明确指出哪些是最优秀的项目就更不可能了。如果说到JavaScript，曾经极富创新的项目（很可能）在一两个月后就会变得过时、落后。以防被淹没在大">GitHub上最流行的Top 10 JavaScript项目</a>
+                     </li>
+<li>
+                        <a href="/programmer/20170724/19987.html" target="_blank" title="要找到有效提高开发者Git和GitHub使用效率的技巧还是不太容易的，所以我们就来教大家一些方法吧。">让你成为Git和GitHub大神的20个技巧</a>
+                     </li>
+
+                </ul>
+            </div>
+            <div class="clearfix" style="margin-top:20px;" >
+                <script>                                                                     </script>
+                <!-- CC评论框 -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:750px;height:90px"
+                     data-ad-client="ca-pub-1180518835303646"
+                     data-ad-slot="8242010366"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            <!-- 评论模块start -->
+
+            <div class="clearfix" id="commnet_list_holder" style="margin-bottom:50px;">
+                <div class="glab-comment-form">
+                    <div class="dcbt">我来说两句</div>
+                    <div class="user-head">
+                        <img id="user_face_url" src="http://cdn.cocimg.com/bbs/images/face/none.gif" height="43" width="43" alt="">
+                    </div>
+                    <div class="form-region">
+                        <textarea name="comment" id="main_comment_content" cols="30" rows="10" placeholder="你怎么看？快来评论一下吧！"></textarea>
+                        <a class="submitform" id="main_comment_bt">发表评论</a>
+                        <div class="unlogin-mask">
+                            <div>您还没有登录！请<a href="/bbs/login.php">登录</a>或<a href="/bbs/register.php">注册</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="glab-comment-callback-msg" class="glab-comment-info"></div>
+                <div class="glab-comment-title">所有评论（<span>0</span>）</div>
+                <div class="glab-commentlist" id="commentlist">
+                    <a id="refresh_comment_btn" href="javascript:;" onclick="$('#morecomment').trigger('click')">刷新评论</a>
+                </div>
+                <div class="glab-comment-more" id="morecomment" style="display:none">
+                    更多评论
+                </div>
+            </div>
+
+            <!-- 评论模块end -->
+
+
+        </div>
+        <!--./left-->
+        <!--侧边栏-->
+        <div class="clearfix newslist">
+            <div class="rightSide detail-right float-r"  >
+                <!--两周热门资讯推荐-->
+                <div>
+                    <div class="part-wrap clearfix">
+                        <h3>热门资讯</h3>
+                        <ul class="related-hot">
+                            <li class="clearfix"><a href="http://www.cocoachina.com/ios/20180322/22710.html" class="float-l pic" target="_blank" title="2018 美团春招 iOS面试分享（一面）"><img src="http://cc.cocimg.com/api/uploads/180322/c06741d9cf87189567791060304620bc.png"  style="max-height:60px" alt="2018 美团春招 iOS面试分享（一面）"/></a><div style="margin-left:86px"><p class="related-intro"><a href="http://www.cocoachina.com/ios/20180322/22710.html" target="_blank" title="2018 美团春招 iOS面试分享（一面）">2018 美团春招 iOS面试分享（一面）</a></p><p class="hits">点击量<span>3521</span></p></div></li><li class="clearfix"><a href="http://www.cocoachina.com/programmer/20180322/22732.html" class="float-l pic" target="_blank" title="iOS不这样写简历，都找不到工作了"><img src="http://cc.cocimg.com/api/uploads/180322/db53d12651a64ddc1ca57fdb5a36f761.png"  style="max-height:60px" alt="iOS不这样写简历，都找不到工作了"/></a><div style="margin-left:86px"><p class="related-intro"><a href="http://www.cocoachina.com/programmer/20180322/22732.html" target="_blank" title="iOS不这样写简历，都找不到工作了">iOS不这样写简历，都找不到工作了</a></p><p class="hits">点击量<span>3323</span></p></div></li><li class="clearfix"><a href="http://www.cocoachina.com/apple/20180316/22641.html" class="float-l pic" target="_blank" title="要脸不！！当初被喷出翔的iPhone“刘海屏”，现在居然有20多家厂商跟风抄袭……"><img src="http://cc.cocimg.com/api/uploads/180316/c784aafc3606f31c95927fc086393375.png"  style="max-height:60px" alt="要脸不！！当初被喷出翔的iPhone“刘海屏”，现在居然有20多家厂商跟风抄袭……"/></a><div style="margin-left:86px"><p class="related-intro"><a href="http://www.cocoachina.com/apple/20180316/22641.html" target="_blank" title="要脸不！！当初被喷出翔的iPhone“刘海屏”，现在居然有20多家厂商跟风抄袭……">要脸不！！当初被喷出翔的iPhone“刘海屏”，现在居然有20多家厂商跟风抄袭……</a></p><p class="hits">点击量<span>3300</span></p></div></li><li class="clearfix"><a href="http://www.cocoachina.com/programmer/20180326/22766.html" class="float-l pic" target="_blank" title="22岁阿里员工：“终于，我被你们逼死了！”"><img src="http://cc.cocimg.com/api/uploads/180326/c3e8b409121a9b93b8870b709653fd62.png"  style="max-height:60px" alt="22岁阿里员工：“终于，我被你们逼死了！”"/></a><div style="margin-left:86px"><p class="related-intro"><a href="http://www.cocoachina.com/programmer/20180326/22766.html" target="_blank" title="22岁阿里员工：“终于，我被你们逼死了！”">22岁阿里员工：“终于，我被你们逼死了！”</a></p><p class="hits">点击量<span>2725</span></p></div></li><li class="clearfix"><a href="http://www.cocoachina.com/programmer/20180321/22702.html" class="float-l pic" target="_blank" title="我是如何在天猫、蚂蚁金服、百度等大厂面试中被拒的"><img src="http://cc.cocimg.com/api/uploads/180321/7a12820a6cc7ce12ff85dd0e6fdd8b4f.png"  style="max-height:60px" alt="我是如何在天猫、蚂蚁金服、百度等大厂面试中被拒的"/></a><div style="margin-left:86px"><p class="related-intro"><a href="http://www.cocoachina.com/programmer/20180321/22702.html" target="_blank" title="我是如何在天猫、蚂蚁金服、百度等大厂面试中被拒的">我是如何在天猫、蚂蚁金服、百度等大厂面试中被拒的</a></p><p class="hits">点击量<span>2228</span></p></div></li><li class="clearfix"><a href="http://www.cocoachina.com/ios/20180316/22643.html" class="float-l pic" target="_blank" title="iOS多Target开发相似App"><img src="http://cc.cocimg.com/api/uploads/180316/223a82591f1dc5257856e5ddc243bd22.png"  style="max-height:60px" alt="iOS多Target开发相似App"/></a><div style="margin-left:86px"><p class="related-intro"><a href="http://www.cocoachina.com/ios/20180316/22643.html" target="_blank" title="iOS多Target开发相似App">iOS多Target开发相似App</a></p><p class="hits">点击量<span>2203</span></p></div></li><li class="clearfix"><a href="http://www.cocoachina.com/ios/20180319/22658.html" class="float-l pic" target="_blank" title="iOS开发中常见bug！（内附解答方法）"><img src="http://cc.cocimg.com/api/uploads/180319/61a68e63654892ff7a69a9e1fa143b4a.png"  style="max-height:60px" alt="iOS开发中常见bug！（内附解答方法）"/></a><div style="margin-left:86px"><p class="related-intro"><a href="http://www.cocoachina.com/ios/20180319/22658.html" target="_blank" title="iOS开发中常见bug！（内附解答方法）">iOS开发中常见bug！（内附解答方法）</a></p><p class="hits">点击量<span>2144</span></p></div></li><li class="clearfix"><a href="http://www.cocoachina.com/ios/20180323/22743.html" class="float-l pic" target="_blank" title="程序员面试闪充 -- KVC&KVO"><img src="http://cc.cocimg.com/api/uploads/180323/16d5890255cb33174aff5d54e4c76d8d.png"  style="max-height:60px" alt="程序员面试闪充 -- KVC&KVO"/></a><div style="margin-left:86px"><p class="related-intro"><a href="http://www.cocoachina.com/ios/20180323/22743.html" target="_blank" title="程序员面试闪充 -- KVC&KVO">程序员面试闪充 -- KVC&KVO</a></p><p class="hits">点击量<span>2119</span></p></div></li><li class="clearfix"><a href="http://www.cocoachina.com/programmer/20180326/22775.html" class="float-l pic" target="_blank" title="研究生的我嫁给了没上过大学的程序员"><img src="http://cc.cocimg.com/api/uploads/180326/550a6206d4c20eb7c7381f9074744e64.png"  style="max-height:60px" alt="研究生的我嫁给了没上过大学的程序员"/></a><div style="margin-left:86px"><p class="related-intro"><a href="http://www.cocoachina.com/programmer/20180326/22775.html" target="_blank" title="研究生的我嫁给了没上过大学的程序员">研究生的我嫁给了没上过大学的程序员</a></p><p class="hits">点击量<span>2005</span></p></div></li><li class="clearfix noborder-b"><a href="http://www.cocoachina.com/programmer/20180316/22640.html" class="float-l pic" target="_blank" title="程序员界年度人口普查：6成以上开发者日工作超9小时，且从不运动"><img src="http://cc.cocimg.com/api/uploads/180316/4791c4b12b21f285ee4d65bf3a5d8757.png"  style="max-height:60px" alt="程序员界年度人口普查：6成以上开发者日工作超9小时，且从不运动"/></a><div style="margin-left:86px"><p class="related-intro"><a href="http://www.cocoachina.com/programmer/20180316/22640.html" target="_blank" title="程序员界年度人口普查：6成以上开发者日工作超9小时，且从不运动">程序员界年度人口普查：6成以上开发者日工作超9小时，且从不运动</a></p><p class="hits">点击量<span>1968</span></p></div></li>
+                        </ul>
+                    </div>
+               </div>
+               <!--./两周热门资讯推荐-->
+               <!--综合评论-->
+                <div class="part-wrap clearfix" style="margin-top: 15px;">
+                    <h3>综合评论</h3>
+                    <ul class="related-comment clearfix" id="all_comments_holder">
+                        <li><span class="hide_comment">没看懂的是storyboard&nbsp;控件都使用了原生控件，所以性能会差一些&nbsp;这句怎么理解，为什么会差一些？</span><br/><p><span>lebron</span><span>评论了</span><a href="http://www.cocoachina.com/ios/20180209/22245.html" title="Pluto - iOS 上一个高性能的排版渲染引擎" target="_blank" ><span>Pluto - iOS 上一个高性能的排版渲染引擎</span></a></p></li><li><span class="hide_comment">看完黄宏生的故事就变成了高中范文，本来好好讲个故事就行了。</span><br/><p><span>Mac_ZC</span><span>评论了</span><a href="http://www.cocoachina.com/programmer/20180329/22841.html" title="年赚70亿却给高管开2000月薪，众叛亲离后蹲了6..." target="_blank" ><span>年赚70亿却给高管开2000月薪，众叛亲离后蹲了6...</span></a></p></li><li><span class="hide_comment">要是能给出答案就更好了，mark</span><br/><p><span>小微向前冲</span><span>评论了</span><a href="http://www.cocoachina.com/ios/20180330/22844.html" title="阿里腾讯头条美团等iOS面试总结" target="_blank" ><span>阿里腾讯头条美团等iOS面试总结</span></a></p></li><li><span class="hide_comment">看看</span><br/><p><span>tommyz</span><span>评论了</span><a href="http://www.cocoachina.com/ios/20180328/22808.html" title="iOS用Socket自定义协议写一套聊天系统（C+..." target="_blank" ><span>iOS用Socket自定义协议写一套聊天系统（C+...</span></a></p></li><li><span class="hide_comment"><br>我很想知道怎么在面试前了解对手的。。。</span><br/><p><span>zhaoName</span><span>评论了</span><a href="http://www.cocoachina.com/programmer/20180330/22847.html" title="iOS程序员这样面试，当场拿到offer的几率是8..." target="_blank" ><span>iOS程序员这样面试，当场拿到offer的几率是8...</span></a></p></li><li><span class="hide_comment">鸡汤有屎，大家小心！</span><br/><p><span>diguoyongshi</span><span>评论了</span><a href="http://www.cocoachina.com/programmer/20180329/22841.html" title="年赚70亿却给高管开2000月薪，众叛亲离后蹲了6..." target="_blank" ><span>年赚70亿却给高管开2000月薪，众叛亲离后蹲了6...</span></a></p></li><li><span class="hide_comment">就说嘛，找程序员当男朋友最靠谱了，妹子多介绍几个给我们。</span><br/><p><span>赵子阳</span><span>评论了</span><a href="http://www.cocoachina.com/programmer/20180326/22775.html" title="研究生的我嫁给了没上过大学的程序员" target="_blank" ><span>研究生的我嫁给了没上过大学的程序员</span></a></p></li><li><span class="hide_comment">贵州云笑而不语</span><br/><p><span>diguoyongshi</span><span>评论了</span><a href="http://www.cocoachina.com/apple/20180330/22848.html" title="库克批脸书隐私保护不力：卖用户信息很赚钱，但苹果没..." target="_blank" ><span>库克批脸书隐私保护不力：卖用户信息很赚钱，但苹果没...</span></a></p></li><li><span class="hide_comment">我的5S</span><br/><p><span>W429</span><span>评论了</span><a href="http://www.cocoachina.com/apple/20180330/22850.html" title=" iOS11.3更新：支持电池管理，iPhone能..." target="_blank" ><span> iOS11.3更新：支持电池管理，iPhone能...</span></a></p></li><li class="noborder-b"><span class="hide_comment">大连不知道还得再等几年……</span><br/><p><span>forgotten</span><span>评论了</span><a href="http://www.cocoachina.com/apple/20180330/22850.html" title=" iOS11.3更新：支持电池管理，iPhone能..." target="_blank" ><span> iOS11.3更新：支持电池管理，iPhone能...</span></a></p></li>
+                    </ul>
+                </div>
+                <!--./综合评论-->
+                <!--相关帖子-->
+                <div class="part-wrap clearfix" style="margin:15px 0 15px 0;">
+                    <h3>相关帖子</h3>
+                    <ul class="related-comment clearfix">
+                        <script charset="gb2312" src="http://www.cocoachina.com/bbs/new.php?action=article&fidin=21_18_2_8_19_41_59_48_56_14_36_5&digest=0&postdate=0&author=0&fname=0&hits=0&replies=0&pre=0&num=10&length=100&order=2&like=ios#Github"></script>
+                    </ul>
+                </div>
+                <!--./相关帖子-->
+                <iframe width="230" height="550" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=230&height=550&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=1659808677&verifier=6043be56&dpc=1"></iframe>
+                <script>                                                                     </script>
+                <!-- CC列表页面230x230 -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:230px;height:230px"
+                     data-ad-client="ca-pub-1180518835303646"
+                     data-ad-slot="6765277166"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+        <!--./侧边栏-->
+    </div>
+
+    <div id="coco-store" style="display:none">
+        <div class="storebox">
+            <h5>提示</h5>
+            <h3>已经收藏该篇文章</h3>
+            <p class="p1"><a href="/bbs/u.php?action=favor&tag=1" target="_blank">去我的收藏夹</a></p>
+            <p class="p2"><a href="/bbs/login.php">请登录</a></p>
+        </div>
+    </div> <!--收藏提示-->
+</div>
+
+<script type="text/javascript">
+
+function postDigg(ftype,aid)
+{
+    var taget_obj = document.getElementById('newdigg');
+    var saveid = GetCookie('diggid');
+    if(saveid != null)
+    {
+        var saveids = saveid.split(',');
+        var hasid = false;
+        saveid = '';
+        j = 1;
+        for(i=saveids.length-1;i>=0;i--)
+        {
+            if(saveids[i]==aid && hasid) continue;
+            else {
+                if(saveids[i]==aid && !hasid) hasid = true;
+                saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+                j++;
+                if(j==20 && hasid) break;
+                if(j==19 && !hasid) break;
+            }
+        }
+        if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+        else saveid += ','+aid;
+        SetCookie('diggid',saveid,1);
+    }
+    else
+    {
+        SetCookie('diggid',aid,1);
+    }
+    myajax = new DedeAjax(taget_obj,false,false,'','','');
+    var url = "/cms/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+    myajax.SendGet2(url);
+    DedeXHTTP = null;
+    $('#zanbox').addClass('zanbox-selected');
+}
+function getDigg(aid)
+{
+    var taget_obj = document.getElementById('newdigg');
+    myajax = new DedeAjax(taget_obj,false,false,'','','');
+    myajax.SendGet2("/cms/plus/digg_ajax.php?id="+aid);
+    DedeXHTTP = null;
+}
+
+
+//显示对应的导航：
+$(function(){
+    var article_id = $('#article_id').val();
+    var saveid = GetCookie('diggid');
+
+    if(saveid != null)
+    {
+        var saveids = saveid.split(',');
+        var hasid = false;
+        saveid = '';
+        j = 1;
+        for(i=saveids.length-1;i>=0;i--)
+        {
+            if(saveids[i]==article_id && hasid) continue;
+            else {
+                if(saveids[i]==article_id && !hasid) hasid = true;
+                saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+                j++;
+                if(j==20 && hasid) break;
+                if(j==19 && !hasid) break;
+            }
+        }
+
+        if(hasid)
+        {
+            $('#zanbox').addClass('zanbox-selected');
+        }
+
+    }
+
+});
+
+window.onload = function() {
+
+    $('#sharediv').removeClass('bdshare-button-style1-32');
+    $('#sharediv').attr('class','bdsharebuttonbox');
+};
+</script>
+<script type="text/javascript" src="http://cdn.cocimg.com/cms/templets/js/shCore.js"></script>
+    <script type="text/javascript" src="http://cdn.cocimg.com/cms/templets/js/brush.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://cdn.cocimg.com/cms/templets/style/shCoreDefault.css"/>
+    <script type="text/javascript">
+    //SyntaxHighlighter.config.clipboardSwf = '/js/scripts/clipboard.swf';
+
+    SyntaxHighlighter.all();</script>
+
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"我的 Github 个人博客是怎样炼成的 - 来自CocoaChina苹果开发中文站@CocoaChina","bdMini":"2","bdMiniList":false,"bdPic":"http://api.cocoachina.com/uploads/170509/410e06a4f56741ee5e514158365434f2.jpg","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api//js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<!--./cont-->
+
+<!-- 回复评论框模板 -->
+<script type="text/javascript" src="http://cdn.cocimg.com/cms/templets/js/comment.js?v=20151019"></script>
+<script type="text/javascript" src="http://cdn.cocimg.com/cms/templets/js/mustache.min.js"></script>
+<!-- 回复评论框模板 -->
+<script id="reply_comment_template" type="x-tmpl-mustache">
+    <div id="sub-reply-comment" class="reply-comment">
+        <textarea name="subcomment" id="sub-reply-txt" cols="30" rows="10" placeholder="你怎么看？快来评论一下吧！"></textarea>
+        <input type="hidden" id="sub-reply-id" value="{{commentid}}" />
+        <input type="hidden" id="sub-reply-userid" value="{{parentuserid}}" />
+        <input type="hidden" id="sub-reply-username" value="{{parentusername}}" />
+        <a type="button" id="sub_comment_bt" class="submitbt">提交</a>
+        <div class="clearfloat"></div>
+        <div class="unlogin-mask">
+            <div>您还没有登录！请<a href="/bbs/login.php">登录</a>或<a href="/bbs/register.php">注册</a></div>
+        </div>
+    </div>
+</script>
+
+<!-- 评论模板 -->
+<script id="main_comment_template" type="x-tmpl-mustache">
+    <div class="glab-comment" rel-data-id="{{comment_id}}" rel-user-id="{{user_id}}" rel-user-name="{{user_name}}" rel-layer="1">
+        <div class="comment-left">
+            <a href="/bbs/u.php?action=feed&uid={{user_id}}" target="_blank"><img src="{{user_icon_url}}" height="43" width="43" alt=""></a>
+        </div>
+        <div class="comment-right">
+            <div class="comment-author"><a href="/bbs/u.php?action=feed&uid={{user_id}}" target="_blank">{{user_name}}</a><span class="puptime">{{create_time}}</span></div>
+            <div class="comment-content">{{&content}}</div>
+            <div class="comment-buttons">
+                <span class="ding">
+                    <img src="http://cdn.cocimg.com/cms/templets/images/zan-default.png" height="14" width="14" alt="" class="default" style="{{#has_supported}} display:none; {{/has_supported}}">
+                    <img src="http://cdn.cocimg.com/cms/templets/images/zan-active.png" height="14" width="14" alt="" class="actived" style="{{^has_supported}} display:none; {{/has_supported}}">
+                    <span class="zancnt">{{support}}</span>
+                </span>
+                <span class="cai">
+                    <img src="http://cdn.cocimg.com/cms/templets/images/cai-default.png" height="14" width="14" alt="" class="default" style="{{#has_reported}} display:none; {{/has_reported}}">
+                    <img src="http://cdn.cocimg.com/cms/templets/images/cai-active.png" height="14" width="14" alt="" class="actived" style="{{^has_reported}} display:none; {{/has_reported}}">
+                    <span class="zancnt">{{report}}</span>
+                </span>
+                <span class="replybt">回复</span>
+            </div>
+        </div>
+            {{#sub}}
+                <div class="glab-comment glab-sub-comment" rel-data-id="{{comment_id}}" rel-user-id="{{user_id}}" rel-user-name="{{user_name}}" rel-layer="2">
+                    <div class="comment-left">
+                        <a href="/bbs/u.php?action=feed&uid={{user_id}}" target="_blank"><img src="{{user_icon_url}}" height="43" width="43" alt=""></a>
+                    </div>
+                    <div class="comment-right">
+                        <div class="comment-author"><a href="/bbs/u.php?action=feed&uid={{user_id}}" target="_blank">{{user_name}}</a><span class="puptime">{{create_time}}</span></div>
+                        <div class="comment-content"><a href="/bbs/u.php?action=feed&uid={{parent_user_id}}" target="_blank">回复：{{parent}}</a>{{&content}}</div>
+                        <div class="comment-buttons">
+                            <span class="ding">
+                                <img src="http://cdn.cocimg.com/cms/templets/images/zan-default.png" height="14" width="14" alt="" class="default" style="{{#has_supported}} display:none; {{/has_supported}}">
+                                <img src="http://cdn.cocimg.com/cms/templets/images/zan-active.png" height="14" width="14" alt="" class="actived" style="{{^has_supported}} display:none; {{/has_supported}}">
+                                <span class="zancnt">{{support}}</span>
+                            </span>
+                            <span class="cai">
+                                <img src="http://cdn.cocimg.com/cms/templets/images/cai-default.png" height="14" width="14" alt="" class="default" style="{{#has_reported}} display:none; {{/has_reported}}">
+                                <img src="http://cdn.cocimg.com/cms/templets/images/cai-active.png" height="14" width="14" alt="" class="actived" style="{{^has_reported}} display:none; {{/has_reported}}">
+                                <span class="zancnt">{{report}}</span>
+                            </span>
+                            <span class="replybt">回复</span>
+                        </div>
+                    </div>
+                </div>
+            {{/sub}}
+    </div>
+</script>
+
+
+<script id="sub_comment_template" type="x-tmpl-mustache">
+    <div class="glab-comment glab-sub-comment" rel-data-id="{{comment_id}}" rel-user-id="{{user_id}}" rel-user-name="{{user_name}}" rel-layer="2">
+        <div class="comment-left">
+            <a href="/bbs/u.php?action=feed&uid={{user_id}}" target="_blank"><img src="{{user_icon_url}}" height="43" width="43" alt=""></a>
+        </div>
+        <div class="comment-right">
+            <div class="comment-author"><a href="/bbs/u.php?action=feed&uid={{user_id}}" target="_blank">{{user_name}}</a><span class="puptime">{{create_time}}</span></div>
+            <div class="comment-content"><a href="/bbs/u.php?action=feed&uid={{parent_user_id}}" target="_blank">回复：{{parent}}</a>{{&content}}</div>
+            <div class="comment-buttons">
+                <span class="ding">
+                    <img src="http://cdn.cocimg.com/cms/templets/images/zan-default.png" height="14" width="14" alt="" class="default" style="{{#has_supported}} display:none; {{/has_supported}}">
+                    <img src="http://cdn.cocimg.com/cms/templets/images/zan-active.png" height="14" width="14" alt="" class="actived" style="{{^has_supported}} display:none; {{/has_supported}}">
+                    <span class="zancnt">{{support}}</span>
+                </span>
+                <span class="cai">
+                    <img src="http://cdn.cocimg.com/cms/templets/images/cai-default.png" height="14" width="14" alt="" class="default" style="{{#has_reported}} display:none; {{/has_reported}}">
+                    <img src="http://cdn.cocimg.com/cms/templets/images/cai-active.png" height="14" width="14" alt="" class="actived" style="{{^has_reported}} display:none; {{/has_reported}}">
+                    <span class="zancnt">{{report}}</span>
+                </span>
+                <span class="replybt">回复</span>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68948817-1', 'auto', {'name': 'newTracker'});
+  ga('newTracker.send', 'pageview');
+
+</script>
+</div>    
+<!--右侧浮动--> 
+    <div class="r-bar">
+        <img src="http://cdn.cocimg.com/cms/templets/images/coco_weixin.png" class="weixin">
+    	<a href="http://weibo.com/cocoachina" target="_blank" title="" class="weibo">sina</a>
+        <a href="javascript:void(0);" target="_blank" title="" class="feedback">weixin</a>
+        <a href="mailto:support@cocoachina.com" title="" class="kefu">mail</a>
+        <a href="javascript:;" title="回到顶部" class="returntop">回到顶部</a>
+    </div>
+
+<script language="javascript" src="/cms/bbsauth_plus2015.php" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+    if (typeof(_user_info_html) != 'undefined' && _user_info_html)
+    {
+        $('.nav-user-login').hide();
+        $('.nav-user-name').html(_user_info_html).show();
+    }
+
+	var type = $('#type_name').html();
+	if(type)
+	{	
+		switch( type )
+		{
+			case 'iOS开发':
+				$('#ios').addClass('light');
+				break;
+			case 'AppStore研究':
+				$('#app_store').addClass('light');
+				break;
+			case 'Mac开发':
+				$('#mac').addClass('light');
+				break;
+			case '产品设计':
+				$('#design').addClass('light');
+				break;
+			case 'Cocos引擎':
+				$('#cocos').addClass('light');
+				break;
+			case 'WebApp':
+				$('#webapp').addClass('light');
+				break;
+			case 'Swift':
+				$('#swift').addClass('light');
+				break;
+			case '游戏开发':
+				$('#game').addClass('light');
+				break;
+			case '苹果相关':
+				$('#apple').addClass('light');
+				break;
+			case '营销推广':
+				$('#market').addClass('light');
+				break;		
+			case '业界动态':
+				$('#industry').addClass('light');
+				break;	
+			case '程序人生':
+				$('#programmer').addClass('light');
+				break;																																
+				
+		}
+	}
+});
+</script>
+<!--./cont-->
+<script type="text/javascript" src="/cms/templets/js/index.js?20111546514"></script>
+<script src="http://cdn.cocimg.com/cms/templets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+<script src="/cms/templets/js/script.js?t=2045479411" type="text/javascript"></script>
+<script type="text/javascript">
+			jQuery(function()
+			{
+				//更改文章来源
+				var source = $('#source a').html();								
+				if( source == '未知' )
+					jQuery('#source a').html('CocoaChina');
+				if( jQuery('#source a').attr('href')=='')
+					jQuery('#source').html('来源：'+source);
+				
+				//获取用户登录的id
+//                var content = jQuery('.t-lid').attr("href");
+//                var uid = 0;
+//                if( content )
+//                {
+//                    content = content.split('=');
+//                    uid = content[1];
+//                }
+//                var timestamp = new Date().getTime();	
+//                var uid2 = parseInt(uid);
+//                if(uid2==uid && uid2!=0){
+//                    uid = uid<<2;			
+//                    uid = uid+''+timestamp;
+//                }else{
+//                    uid = "";
+//                }
+//                var oIframe=document.getElementById("comiframe");
+//                if(oIframe){
+//                    var oUrl=window.location.href;
+//                    oUrl = encodeURIComponent(oUrl);
+//
+//                    oIframe.src="/comment.php?url="+oUrl+"&uid="+uid;
+//                }
+
+				
+			});
+		</script>
+<!--footer-->
+<div class="footer clearfix">
+    <div class="footer-b">
+        <div>
+            <a href="/aboutus/index.html" target="_blank">关于我们</a>
+            <a href="/contactus/index.html" target="_blank">商务合作</a>
+            <a href="mailto:support@cocoachina.com" target="_blank">联系我们</a>
+            <a href="/corps" target="_blank">合作伙伴</a>
+        </div>
+        <p class="footer-b-p">北京触控科技有限公司版权所有</p>
+        <p>
+            &copy;2018 Chukong Technologies,Inc.
+            <i>
+                <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备 11006519号 　京ICP证 100954号</a> 京公网安备11010502020289 
+                <a href="http://182.131.21.137/ccnt-apply/admin/business/preview/business-preview!lookUrlRFID.action?main_id=A580B24B1AE846CE9DA949026D63939F" target="_blank">
+                    <img src="http://cdn.cocimg.com/cms/templets/images/jingwen.png" style="margin: -10px auto -14px -10px;" />
+                    京网文[2012]0426-138号
+                </a>
+            </i>
+        </p>
+    </div>
+</div>
+<!--./footer-->
+<script language="javascript" type="text/javascript" src="/cms/include/dedeajax2-min.js"></script>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16940817-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  
+ 
+function search_check()
+{
+	var search_keyword = $('#search_keyword').val();
+
+	if( search_keyword.length < 2 )
+	{
+		alert("搜索关键字不能少于2个字节，请重新输入。");
+	}
+	else
+	{
+		$('#searchform').submit();
+	}
+}
+
+</script>
+<script type="text/javascript">
+_acK({aid:116313,format:0,mode:1,gid:1,serverbaseurl:"afp.csbew.com/"});
+</script>
+
+</body>
+</html>
